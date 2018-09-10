@@ -1,0 +1,23 @@
+{
+  "name": "news-simplify",
+  "version": "1.0.0",
+  "description": "Simplify the news",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tuccinator/news-simplify.git"
+  },
+  "author": "Nick Tucci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tuccinator/news-simplify/issues"
+  },
+  "homepage": "https://github.com/Tuccinator/news-simplify#readme",
+  "dependencies": {
+    "create-html": "^4.1.0",
+    "puppeteer": "^1.8.0"
+  }
+}
