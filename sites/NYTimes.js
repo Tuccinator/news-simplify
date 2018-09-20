@@ -1,6 +1,6 @@
 class NYTimes {
-	constructor(puppeteer, builder) {
-		this.puppeteer = puppeteer;
+	constructor(browser, builder) {
+		this.browser = browser;
 		this.builder = builder;
 		this.titleSelector = 'h1';
 		this.authorSelector = "span[itemprop='name']";
@@ -8,8 +8,7 @@ class NYTimes {
 	}
 
 	async run() {
-		const browser = await this.puppeteer.launch({args: ['--no-sandbox']});
-		const page = await browser.newPage();
+		const page = await this.browser.newPage();
 
 		await page.goto('https://www.nytimes.com/2018/09/09/technology/pinterest-growth.html?rref=collection%2Fsectioncollection%2Ftechnology&action=click&contentCollection=technology&region=rank&module=package&version=highlights&contentPlacement=1&pgtype=sectionfront');
 
@@ -53,7 +52,7 @@ class NYTimes {
 
 		this.builder(article.title, article.author, article.paragraphs.join(''), 'NYTimes');
 
-		await browser.close();
+		await this.browser.close();
 	}
 }
 
