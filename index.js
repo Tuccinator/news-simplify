@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 
 const NYTimes = require('./sites/NYTimes');
+const Economist = require('./sites/Economist');
 const builder = require('./helpers/builder');
 
 
@@ -8,6 +9,7 @@ const builder = require('./helpers/builder');
 	const browser = await puppeteer.launch({args: ['--no-sandbox']});
 	
 	const times = new NYTimes(browser, builder);
-	
-	times.run();
+	const economist = new Economist(browser, builder);
+
+	economist.run();
 })()

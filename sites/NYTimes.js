@@ -4,13 +4,13 @@ class NYTimes {
 		this.builder = builder;
 		this.titleSelector = 'h1';
 		this.authorSelector = "span[itemprop='name']";
-		this.contentSelector = '.StoryBodyCompanionColumn > div > p, .StoryBodyCompanionColumn > div > h2, figure';
+		this.contentSelector = '.StoryBodyCompanionColumn > div > p, .StoryBodyCompanionColumn > div > h2, #story > figure';
 	}
 
 	async run() {
 		const page = await this.browser.newPage();
 
-		await page.goto('https://www.nytimes.com/2018/09/09/technology/pinterest-growth.html?rref=collection%2Fsectioncollection%2Ftechnology&action=click&contentCollection=technology&region=rank&module=package&version=highlights&contentPlacement=1&pgtype=sectionfront');
+		await page.goto('https://www.nytimes.com/2018/09/09/technology/pinterest-growth.html');
 
 		const article = await page.evaluate((authorSelector, titleSelector, contentSelector) => {
 			const article = {};
@@ -38,7 +38,7 @@ class NYTimes {
 						break;
 					case 'P':
 					default:
-						content = '<p>' + node.innerText + '</p>';
+						content = '<p class="paragraph">' + node.innerText + '</p>';
 						break;
 				}
 
