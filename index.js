@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 
 const NYTimes = require('./sites/NYTimes');
 const Economist = require('./sites/Economist');
+const Medium = require('./sites/Medium');
 const builder = require('./helpers/builder');
 
 
@@ -10,6 +11,7 @@ const builder = require('./helpers/builder');
 	
 	const times = new NYTimes(browser, builder);
 	const economist = new Economist(browser, builder);
+	const medium = new Medium(browser, builder);
 
-	economist.run();
+	medium.run();
 })()

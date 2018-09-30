@@ -4,6 +4,8 @@ const fs = require('fs');
 module.exports = (title, author, content, source, extras) => {
 	extras = extras || {};
 
+	console.log(author);
+
 	let body = '<article>';
 
 	if(title) {

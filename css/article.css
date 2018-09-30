@@ -47,10 +47,19 @@ figure {
 	padding: 0;
 	margin: 0;
 	margin-top: 10px;
+	width: 100%;
 }
 
-figure img {
+img {
 	width: 100%;
+}
+
+blockquote {
+	background-color: #fafafa;
+	border-left: 3px solid #dcdcdc;
+	font-family: 'Amiri', serif;
+	margin: 0;
+	padding: 1rem;
 }
 
 figcaption span:first-child {
@@ -66,4 +75,8 @@ figcaption span span:first-child {
 figcaption span:not(:first-child) {
 	color: #999;
 	font-size: 0.7rem;
+}
+
+a {
+	color: #2A5DB0;
 }

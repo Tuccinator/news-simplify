@@ -11,7 +11,7 @@ class Economist {
 	async run() {
 		const page = await this.browser.newPage();
 
-		await page.goto('https://www.economist.com/business/2018/09/29/a-ride-hailing-battle-in-south-east-asia');
+		await page.goto('https://www.economist.com/the-economist-explains/2018/09/27/are-relations-between-turkey-and-germany-getting-back-to-normal');
 
 		const article = await page.evaluate((subtitleSelector, titleSelector, contentSelector) => {
 			const article = {};
